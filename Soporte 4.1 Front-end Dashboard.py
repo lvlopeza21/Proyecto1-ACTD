@@ -17,29 +17,17 @@ import plotly.express as px
 
 
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,title='Dashboard análisis productividad')
 server = app.server
 
 
 #########################################################DATA#######################################################################
-# en este primer ejemplo usamos unos datos de prueba que creamos directamente
-# en un dataframe de pandas 
-df = pd.DataFrame({
-    "Fiebre": ["Moderada", "Leve", "Alta", "Moderada", "Leve", "Alta"],
-    "Casos": [4, 1, 2, 2, 4, 5],
-    "Diagnóstico": ["Positivo", "Positivo", "Positivo", "Negativo", "Negativo", "Negativo"]
-})
-
 
 #ANÁLISIS DESCRIPTIVO
 
 #Gráfica productividad anual
 fig = bk.fig
-
-#gráfica análisis por departamento
-fig2 = px.bar(df, x="Fiebre", y="Casos", color="Diagnóstico", barmode="group")
 
 
 #########################################################CSS#######################################################################
